@@ -179,13 +179,10 @@ export function ContactForm({
 }
 
 /**
- * Sobre dirigido a Marian: su correo, su teléfono (abre WhatsApp) y su
- * LinkedIn, con un sello del logo y el matasellos de Sevilla. Es el
- * contacto directo, sin formulario.
+ * Sobre dirigido a Marian: su correo y su LinkedIn, con un sello del logo
+ * y el matasellos de Sevilla. Es el contacto directo, sin formulario.
  */
 export function Sobre({ className = '', style }: { className?: string; style?: CSSProperties }) {
-  // wa.me necesita solo los dígitos, con el prefijo del país
-  const whatsapp = `https://wa.me/${contacto.telefono.replace(/\D/g, '')}`
   return (
     <section className={`${s.sobre} ${className}`} style={style} aria-labelledby="sobre-titulo">
       <h2 id="sobre-titulo" className="sr-only">
@@ -200,20 +197,6 @@ export function Sobre({ className = '', style }: { className?: string; style?: C
         <p className={s.destinatario}>Marian López Solís</p>
         <p>
           <a href={`mailto:${contacto.email}`}>{contacto.email}</a>
-        </p>
-        <p>
-          <a
-            href={whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${contacto.sobre.whatsapp} ${contacto.telefono}`}
-          >
-            <svg className={s.wa} viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.6 18.6Z" />
-              <path d="M9.2 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.6.8-.6.3-1.6.4-3-.4-1.6-.9-2.9-2.2-3.7-3.8-.7-1.3-.6-2.3-.3-2.8Z" />
-            </svg>
-            {contacto.telefono}
-          </a>
         </p>
         <p>
           <a href={contacto.linkedin} target="_blank" rel="noopener noreferrer">

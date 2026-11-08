@@ -340,17 +340,6 @@
 }
 
 
-/* Icono de WhatsApp, dibujado a línea como el resto de iconos */
-.wa {
-  width: 1.05em;
-  margin-right: 0.35em;
-  vertical-align: -0.15em;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linejoin: round;
-}
-
 .ciudad {
   font-size: 0.85em;
   color: var(--texto);

@@ -376,14 +376,11 @@ export const contacto = {
   /** Correo que recibe los mensajes (de los CV de Marian). Vacío = formulario sin conectar. */
   email: 'frlmrn13@gmail.com',
   linkedin: 'https://www.linkedin.com/in/marian-lopez-solis-a15707389',
-  /** Teléfono (de los CV): Marian pidió publicarlo con enlace a WhatsApp */
-  telefono: '+34 645 53 22 65',
   /** Sobre con los datos de contacto directos */
   sobre: {
     titulo: 'O escríbeme directamente',
     para: 'Para',
     ciudad: 'Sevilla, España',
-    whatsapp: 'Escribirme por WhatsApp al',
     linkedin: 'Mi perfil de LinkedIn',
     matasellos: 'SEVILLA · ARCHIVO · SEVILLA · ARCHIVO ·',
   },

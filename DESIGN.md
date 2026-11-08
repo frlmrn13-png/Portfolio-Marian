@@ -185,5 +185,5 @@ o, si no se puede, `font-weight: var(--rotulo-peso)` y
 
 - Web bilingüe: todo texto visible va en `src/textos/es.ts` y `en.ts`; nada
   escrito directamente en los componentes.
-- No se inventan proyectos, datos ni resultados. El teléfono de Marian solo en el sobre de Contacto (enlace a WhatsApp), por petición suya.
+- No se inventan proyectos, datos ni resultados. El teléfono y el CV de Marian no se publican en el portfolio, por petición suya.
 - No poner post-its o rótulos encima de objetos que ya se explican solos.
