@@ -294,6 +294,8 @@ export const en: Textos = {
     ],
     nota: ['Good ideas', 'can be found, too.'],
     boton: 'Explore my projects',
+    linkedin: 'My LinkedIn profile',
+    nuevaPestana: '(opens in a new tab)',
   },
 
   casos: [

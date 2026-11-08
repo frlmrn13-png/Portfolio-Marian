@@ -325,6 +325,9 @@ export const sobreMi = {
   ],
   nota: ['Las buenas ideas', 'también se encuentran.'],
   boton: 'Explorar mis proyectos',
+  /** Enlace a LinkedIn bajo la presentación (la URL está en contacto.linkedin) */
+  linkedin: 'Mi perfil de LinkedIn',
+  nuevaPestana: '(se abre en una pestaña nueva)',
 }
 
 export type Caso = {

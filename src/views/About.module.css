@@ -64,3 +64,31 @@
   clip-path: polygon(1% 2%, 22% 0.5%, 47% 1.8%, 71% 0, 98.5% 1.5%, 99.5% 24%, 98% 52%, 100% 78%, 98.8% 99%,
       74% 98%, 51% 100%, 27% 98.4%, 2% 99.6%, 0 74%, 1.6% 49%, 0.2% 25%);
 }
+
+/* LinkedIn bajo la presentación: mismo enlace marino que el sobre de Contacto */
+.linkedin {
+  margin: 0.9em 0 0;
+}
+
+.linkedin a {
+  /* zona pulsable más alta en el móvil, sin mover el texto */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  padding-block: 0.3em;
+  margin-block: -0.3em;
+  font-weight: 600;
+  color: var(--marino);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.linkedin svg {
+  width: 0.95em;
+  height: 0.95em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
