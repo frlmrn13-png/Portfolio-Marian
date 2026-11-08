@@ -294,8 +294,6 @@ export const en: Textos = {
     ],
     nota: ['Good ideas', 'can be found, too.'],
     boton: 'Explore my projects',
-    linkedin: 'My LinkedIn profile',
-    nuevaPestana: '(opens in a new tab)',
   },
 
   casos: [
@@ -337,7 +335,6 @@ export const en: Textos = {
     texto: ['Tell me what you’re working on.', 'We start with a conversation.'],
     nota: ['Every idea', 'starts here.'],
     email: 'frlmrn13@gmail.com',
-    cv: '/cv/CV_Marian_Lopez_Solis_EN.pdf',
     linkedin: 'https://www.linkedin.com/in/marian-lopez-solis-a15707389',
     telefono: '+34 645 53 22 65',
     sobre: {
@@ -346,8 +343,7 @@ export const en: Textos = {
       ciudad: 'Seville, Spain',
       whatsapp: 'Message me on WhatsApp at',
       linkedin: 'My LinkedIn profile',
-      cv: 'Download my CV',
-      matasellos: 'SEVILLE · ARCHIVE · SEVILLE · ARCHIVE ·',
+        matasellos: 'SEVILLE · ARCHIVE · SEVILLE · ARCHIVE ·',
     },
     boton: 'Send message',
     pasos: ['You tell me what you’re working on.', 'We talk it through, no rush.', 'And we open the case.'],

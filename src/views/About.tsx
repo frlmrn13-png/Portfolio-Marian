@@ -1,5 +1,5 @@
 import retrato from '../assets/img/retrato-bn.webp'
-import { contacto, pages, sobreMi, ui } from '../content'
+import { pages, sobreMi, ui } from '../content'
 import { CarpetaHerramientas, Diplomas, FicheroExperiencia, PostIt } from '../components/Archivo'
 import { PageShell } from '../components/PageShell'
 import { Link, paths } from '../lib/router'
@@ -29,15 +29,6 @@ export function About() {
             {sobreMi.gancho[0]} <strong>{sobreMi.gancho[1]}</strong>
           </p>
           <p className={p.lead}>{sobreMi.lead}</p>
-          <p className={s.linkedin}>
-            <a href={contacto.linkedin} target="_blank" rel="noopener noreferrer">
-              {sobreMi.linkedin}
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M9 6h9v9M18 6 6.5 17.5" />
-              </svg>
-              <span className="sr-only"> {sobreMi.nuevaPestana}</span>
-            </a>
-          </p>
         </section>
 
         <section className={s.objeto} aria-labelledby="trayectoria">

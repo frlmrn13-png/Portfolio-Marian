@@ -175,36 +175,3 @@
   width: 0;
   height: 0;
 }
-
-/* LinkedIn bajo la presentación: mismo enlace marino que el sobre de Contacto */
-.linkedin {
-  margin: 0.7em 0 0;
-}
-
-.linkedin a {
-  /* zona pulsable más alta en el móvil, sin mover el texto */
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3em;
-  padding-block: 0.3em;
-  margin-block: -0.3em;
-  font-weight: 600;
-  color: var(--marino);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-}
-
-.linkedin svg {
-  width: 0.95em;
-  height: 0.95em;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* con LinkedIn encima, el botón se acerca un poco para no alargar la hoja */
-.linkedin + .cta {
-  margin-top: calc(var(--u) * 18);
-}

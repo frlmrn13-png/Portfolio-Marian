@@ -2,7 +2,6 @@ import { useId, useState, type CSSProperties, type FormEvent, type ReactNode } f
 import { contacto, pages, ui } from '../content'
 import { PageShell } from '../components/PageShell'
 import { Logo } from '../components/Header'
-import { urlPublica } from '../lib/router'
 import p from '../components/PageShell.module.css'
 import s from './Contact.module.css'
 
@@ -219,11 +218,6 @@ export function Sobre({ className = '', style }: { className?: string; style?: C
         <p>
           <a href={contacto.linkedin} target="_blank" rel="noopener noreferrer">
             {contacto.sobre.linkedin}
-          </a>
-        </p>
-        <p>
-          <a href={urlPublica(contacto.cv)} download>
-            {contacto.sobre.cv}
           </a>
         </p>
         <p className={s.ciudad}>{contacto.sobre.ciudad}</p>

@@ -325,9 +325,6 @@ export const sobreMi = {
   ],
   nota: ['Las buenas ideas', 'también se encuentran.'],
   boton: 'Explorar mis proyectos',
-  /** Enlace a LinkedIn bajo la presentación (la URL está en contacto.linkedin) */
-  linkedin: 'Mi perfil de LinkedIn',
-  nuevaPestana: '(se abre en una pestaña nueva)',
 }
 
 export type Caso = {
@@ -378,8 +375,6 @@ export const contacto = {
   nota: ['Toda idea', 'empieza por aquí.'],
   /** Correo que recibe los mensajes (de los CV de Marian). Vacío = formulario sin conectar. */
   email: 'frlmrn13@gmail.com',
-  /** CV en PDF, en el idioma de la web */
-  cv: '/cv/CV_Marian_Lopez_Solis.pdf',
   linkedin: 'https://www.linkedin.com/in/marian-lopez-solis-a15707389',
   /** Teléfono (de los CV): Marian pidió publicarlo con enlace a WhatsApp */
   telefono: '+34 645 53 22 65',
@@ -390,7 +385,6 @@ export const contacto = {
     ciudad: 'Sevilla, España',
     whatsapp: 'Escribirme por WhatsApp al',
     linkedin: 'Mi perfil de LinkedIn',
-    cv: 'Descargar mi CV',
     matasellos: 'SEVILLA · ARCHIVO · SEVILLA · ARCHIVO ·',
   },
   boton: 'Enviar mensaje',

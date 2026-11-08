@@ -1,7 +1,7 @@
 import whitby from '../assets/archivo/whitby.webp'
 import frankenstein from '../assets/archivo/frankenstein.webp'
 import retrato from '../assets/img/retrato-bn.webp'
-import { contacto, pages, pistas, sobreMi, ui } from '../content'
+import { pages, pistas, sobreMi, ui } from '../content'
 import { Decor } from '../components/Decor'
 import { StageShell } from '../components/StageShell'
 import { SelloContacto } from '../components/SelloContacto'
@@ -102,15 +102,6 @@ export function AboutStage({ unit }: { unit: number }) {
           {sobreMi.gancho[0]} <strong>{sobreMi.gancho[1]}</strong>
         </p>
         <p className={s.lead}>{sobreMi.lead}</p>
-        <p className={s.linkedin}>
-          <a href={contacto.linkedin} target="_blank" rel="noopener noreferrer">
-            {sobreMi.linkedin}
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 6h9v9M18 6 6.5 17.5" />
-            </svg>
-            <span className="sr-only"> {sobreMi.nuevaPestana}</span>
-          </a>
-        </p>
         {/* Bajo la presentación, como en la portada: sin tapar ningún objeto */}
         <Link to={paths.casos} className={s.cta}>
           {sobreMi.boton}
@@ -121,7 +112,7 @@ export function AboutStage({ unit }: { unit: number }) {
       </section>
 
       {/* ——— Cajón de experiencia ——— */}
-      <section className={`${s.objeto} ${s.cajon}`} style={box(318, 544, 470)} aria-labelledby="trayectoria">
+      <section className={`${s.objeto} ${s.cajon}`} style={box(318, 524, 470)} aria-labelledby="trayectoria">
         <h2 id="trayectoria" className="sr-only">
           {ui.dondeHeTrabajado}
         </h2>
@@ -148,7 +139,7 @@ export function AboutStage({ unit }: { unit: number }) {
 
       {/* Puntos del hilo: foto, cajón, diplomas y carpeta */}
       <span className={s.anchor} data-anchor="sm1" style={box(204, 294)} />
-      <span className={s.anchor} data-anchor="sm2" style={box(338, 758)} />
+      <span className={s.anchor} data-anchor="sm2" style={box(338, 738)} />
       <span className={s.anchor} data-anchor="sm4" style={box(986, 396)} />
       {/* Atajo a Contacto: el sello, pequeño, junto a la carpeta */}
       <SelloContacto style={{ ...box(1392, 300, 100, 100) }} />
