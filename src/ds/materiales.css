@@ -1,0 +1,73 @@
+/* Archivo Abierto · materiales: piezas comunes (átomos de CSS) que los módulos
+   usan con «composes: … from global». Ver DESIGN.md, «Materiales». */
+
+/* Papel suelto rasgado: el papel va en ::before (con su rasgado) y la sombra
+   en el propio elemento, así lo que lleve encima (cinta, chinchetas) no se
+   recorta. Variables: --rasgado, --papel-1 y --papel-2. */
+.hoja-rasgada {
+  position: relative;
+  isolation: isolate;
+  filter: var(--sombra-papel);
+}
+
+.hoja-rasgada::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    url('../assets/textures/fibres.svg'),
+    url('../assets/textures/grain.svg'),
+    linear-gradient(170deg, var(--papel-1, var(--hoja-1)), var(--papel-2, var(--hoja-2)));
+  background-size:
+    900px 900px,
+    320px 320px,
+    auto;
+  clip-path: var(--rasgado, var(--rasgado-ancho));
+}
+
+/* Rótulo: etiqueta pequeña en mayúsculas, en granate */
+.rotulo {
+  font-family: var(--sans);
+  font-weight: var(--rotulo-peso);
+  letter-spacing: var(--rotulo-tracking);
+  text-transform: uppercase;
+  color: var(--granate);
+}
+
+/* Cinta adhesiva translúcida */
+.cinta {
+  position: absolute;
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.18), transparent 40%),
+    url('../assets/textures/grain.svg'),
+    rgb(214 196 152 / 0.72);
+  box-shadow: 0 1px 2px rgb(60 40 20 / 0.12);
+  clip-path: polygon(0 6%, 4% 0, 9% 7%, 15% 1%, 22% 6%, 30% 0, 100% 3%, 97% 30%, 100% 55%, 96% 80%, 100% 100%, 70% 96%, 60% 100%, 45% 95%, 30% 100%, 12% 96%, 0 100%, 3% 70%, 0 45%, 4% 22%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Botón granate (material): degradado granate con grano, texto claro y el
+   icono dibujado a línea. Solo el material: el tamaño y las interacciones los
+   pone el átomo Boton (src/ds/atoms) o la pieza que lo usa. */
+.boton-granate {
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  cursor: pointer;
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-family: var(--sans);
+  font-weight: 600;
+  background: url('../assets/textures/grain.svg'), var(--degradado-boton);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.boton-granate svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

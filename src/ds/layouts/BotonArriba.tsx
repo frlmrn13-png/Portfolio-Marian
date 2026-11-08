@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ui } from '../content'
+import { ui } from '../../content'
 import s from './PageShell.module.css'
 
 /** «Volver arriba»: aparece en cuanto se baja un poco (en el móvil, casi media pantalla). */

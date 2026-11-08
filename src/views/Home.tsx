@@ -4,17 +4,18 @@ import nota from '../assets/decor/nota.webp'
 import romero from '../assets/archivo/romero.webp'
 import taza from '../assets/decor/taza.webp'
 import { cards, home, pistas, ui } from '../content'
-import { Annotation, Leader } from '../components/Annotation'
-import { CatPaw } from '../components/CatPaw'
-import { Decor, PointerDepth } from '../components/Decor'
-import { SheetArchitecture, SheetDesktop, SheetFlow } from '../components/DesignSheets'
-import { Header } from '../components/Header'
-import { Polaroid, type PolaroidHandle } from '../components/Polaroid'
-import { SelloContacto } from '../components/SelloContacto'
-import { Threads, cubicPath, sagPath, type ThreadDef, type ThreadsHandle } from '../components/Threads'
+import { Annotation, Leader } from '../ds/atoms/Annotation'
+import { CatPaw } from '../ds/molecules/CatPaw'
+import { Decor, PointerDepth } from '../ds/organisms/Decor'
+import { SheetArchitecture, SheetDesktop, SheetFlow } from '../ds/organisms/DesignSheets'
+import { Header } from '../ds/organisms/Header'
+import { Polaroid, type PolaroidHandle } from '../ds/molecules/Polaroid'
+import { SelloContacto } from '../ds/molecules/SelloContacto'
+import { Threads, cubicPath, sagPath, type ThreadDef, type ThreadsHandle } from '../ds/organisms/Threads'
 import { pinnedRect } from '../lib/cards'
-import { box } from '../lib/layout'
+import { box } from '../ds/layouts/layout'
 import { exploreCards } from '../lib/explore'
+import { Boton } from '../ds/atoms/Boton'
 import s from './Home.module.css'
 
 /* Polaroids alrededor del hero, todas del mismo tamaño; la chincheta de cada una hace de eje del balanceo */
@@ -132,13 +133,13 @@ export function Home({ unit }: { unit: number }) {
               </h1>
               <p className={s.texto}>{home.texto}</p>
               <div className={s.accion}>
-                <button
-                  type="button"
+                <Boton
                   className={s.boton}
+                  tamano="material"
                   onClick={() => exploreCards([sobreMiRef, massolisRef, cecotecRef, ohmycatRef])}
                 >
                   {home.boton}
-                </button>
+                </Boton>
                 <Annotation lines={home.chivato} delay={T_01} className={s.chivato} />
               </div>
             </section>

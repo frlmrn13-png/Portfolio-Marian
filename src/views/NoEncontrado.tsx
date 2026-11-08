@@ -1,6 +1,8 @@
 import { ui } from '../content'
-import { PageShell } from '../components/PageShell'
-import p from '../components/PageShell.module.css'
+import { PageShell } from '../ds/layouts/PageShell'
+import { Boton } from '../ds/atoms/Boton'
+import { Icono } from '../ds/atoms/Icono'
+import p from '../ds/layouts/PageShell.module.css'
 import { Link, paths, type PageName } from '../lib/router'
 import s from './NoEncontrado.module.css'
 
@@ -21,12 +23,16 @@ export function NoEncontrado() {
           <ul className={s.secciones}>
             {secciones.map(k => (
               <li key={k}>
-                <Link to={paths[k]} className={k === 'inicio' ? p.button : s.enlace}>
-                  {ui.menu[k]}
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M5 12h13M13 6.5 18.5 12 13 17.5" />
-                  </svg>
-                </Link>
+                {k === 'inicio' ? (
+                  <Boton to={paths[k]} icono="siguiente">
+                    {ui.menu[k]}
+                  </Boton>
+                ) : (
+                  <Link to={paths[k]} className={s.enlace}>
+                    {ui.menu[k]}
+                    <Icono nombre="siguiente" />
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

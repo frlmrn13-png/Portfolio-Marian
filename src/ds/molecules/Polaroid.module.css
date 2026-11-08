@@ -11,7 +11,7 @@
   color: var(--texto);
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
-  background: url('../assets/textures/grain.svg'), linear-gradient(170deg, #fbfaf7, var(--polaroid) 60%, #f0ede7);
+  background: url('../../assets/textures/grain.svg'), linear-gradient(170deg, var(--polaroid-luz), var(--polaroid) 60%, var(--polaroid-sombra));
   box-shadow:
     0 calc(var(--u) * 1.5) calc(var(--u) * 2) rgb(40 25 10 / 0.18),
     0 calc(var(--u) * 10) calc(var(--u) * 18) rgb(40 25 10 / 0.2);
@@ -32,8 +32,8 @@
   min-height: 0;
   overflow: hidden;
   background:
-    url('../assets/textures/grain.svg'),
-    radial-gradient(ellipse 90% 80% at 40% 35%, #d8cfc1, #cbc0af 75%, #c2b6a4);
+    url('../../assets/textures/grain.svg'),
+    radial-gradient(ellipse 90% 80% at 40% 35%, var(--foto-vacia-1), var(--foto-vacia-2) 75%, var(--foto-vacia-3));
 }
 
 .photo[data-recorte] {

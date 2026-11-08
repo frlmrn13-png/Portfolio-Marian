@@ -2,13 +2,14 @@ import whitby from '../assets/archivo/whitby.webp'
 import frankenstein from '../assets/archivo/frankenstein.webp'
 import retrato from '../assets/img/retrato-bn.webp'
 import { pages, pistas, sobreMi, ui } from '../content'
-import { Decor } from '../components/Decor'
-import { StageShell } from '../components/StageShell'
-import { SelloContacto } from '../components/SelloContacto'
-import { CarpetaHerramientas, Diplomas, FicheroExperiencia, Huellas, PostIt } from '../components/Archivo'
-import { cubicPath, sagPath, type ThreadDef } from '../components/Threads'
-import { box } from '../lib/layout'
-import { Link, paths } from '../lib/router'
+import { Decor } from '../ds/organisms/Decor'
+import { StageShell } from '../ds/layouts/StageShell'
+import { SelloContacto } from '../ds/molecules/SelloContacto'
+import { CarpetaHerramientas, Diplomas, FicheroExperiencia, Huellas, PostIt } from '../ds/organisms/Archivo'
+import { cubicPath, sagPath, type ThreadDef } from '../ds/organisms/Threads'
+import { box } from '../ds/layouts/layout'
+import { paths } from '../lib/router'
+import { Boton } from '../ds/atoms/Boton'
 import h from './Home.module.css'
 import s from './AboutStage.module.css'
 
@@ -103,12 +104,9 @@ export function AboutStage({ unit }: { unit: number }) {
         </p>
         <p className={s.lead}>{sobreMi.lead}</p>
         {/* Bajo la presentación, como en la portada: sin tapar ningún objeto */}
-        <Link to={paths.casos} className={s.cta}>
+        <Boton to={paths.casos} className={s.cta} tamano="material" icono="siguiente">
           {sobreMi.boton}
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h13M13 6.5 18.5 12 13 17.5" />
-          </svg>
-        </Link>
+        </Boton>
       </section>
 
       {/* ——— Cajón de experiencia ——— */}

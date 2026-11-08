@@ -16,7 +16,7 @@
   height: 100%;
   padding: calc(var(--u) * 9);
   background:
-    url('../assets/textures/grain.svg'),
+    url('../../assets/textures/grain.svg'),
     linear-gradient(165deg, #efe5d1, #e2d4ba 70%, #d8c7a8);
   box-shadow:
     0 calc(var(--u) * 1.5) calc(var(--u) * 2) rgb(50 30 10 / 0.22),

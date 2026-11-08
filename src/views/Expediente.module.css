@@ -500,7 +500,7 @@
 
 /* ——— Post-its (los mismos del resto de la web) ——— */
 .postit {
-  composes: postit from '../components/Archivo.module.css';
+  composes: postit from '../ds/organisms/Archivo.module.css';
   width: auto;
   min-height: 0;
   padding: 1.4em 1.15em 1.3em;
@@ -518,11 +518,11 @@
 }
 
 .postitTit {
-  composes: postitTit from '../components/Archivo.module.css';
+  composes: postitTit from '../ds/organisms/Archivo.module.css';
 }
 
 .postitNota {
-  composes: postitNota from '../components/Archivo.module.css';
+  composes: postitNota from '../ds/organisms/Archivo.module.css';
 }
 
 .cita {
@@ -1028,7 +1028,7 @@
   }
 }
 
-/* ——— Dispositivos: un solo marco SVG (components/Marcos.tsx) para todos ———
+/* ——— Dispositivos: un solo marco SVG (ds/atoms/Marcos.tsx) para todos ———
    Medidas fijas: pase lo que pase alrededor, no se estiran ni cambian de grosor */
 .movil,
 .portatil {

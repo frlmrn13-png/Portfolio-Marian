@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react'
 import { matchCase, matchExpediente, urlDe, useRouter } from './lib/router'
-import { useViewport } from './lib/layout'
+import { useViewport } from './ds/layouts/layout'
 import { useIdioma } from './lib/idioma'
 import { cards, expedientes, ui } from './content'
 import { Home } from './views/Home'

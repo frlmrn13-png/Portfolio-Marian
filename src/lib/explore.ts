@@ -1,5 +1,5 @@
 import type { RefObject } from 'react'
-import type { PolaroidHandle } from '../components/Polaroid'
+import type { PolaroidHandle } from '../ds/molecules/Polaroid'
 
 /**
  * «Explora las tarjetas»: las polaroids son la navegación principal, así que

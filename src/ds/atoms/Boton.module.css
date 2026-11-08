@@ -1,0 +1,42 @@
+/* Átomo Boton: el botón granate de las páginas en columna. El material
+   (degradado, texto, icono) es la clase global «boton-granate». */
+.boton {
+  composes: boton-granate from global;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 24px;
+  font-size: 16px;
+  box-shadow: var(--sombra-boton);
+  transition:
+    transform var(--dur-hover) var(--ease-out),
+    box-shadow var(--dur-hover) var(--ease-out);
+}
+
+.boton svg {
+  width: 18px;
+  transition: translate var(--dur-hover) var(--ease-out);
+}
+
+/* Se levanta 2px y la flecha se adelanta: invita a seguir */
+@media (hover: hover) and (pointer: fine) {
+  .boton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-boton-alta);
+  }
+  .boton:hover svg {
+    translate: 3px 0;
+  }
+}
+
+/* Al pulsar se hunde 1px */
+.boton:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--sombra-boton-baja);
+  transition-duration: var(--dur-pulsar);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boton {
+    transition: none;
+  }
+}

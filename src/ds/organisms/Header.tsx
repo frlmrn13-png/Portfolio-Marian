@@ -1,9 +1,9 @@
 import { useEffect, useId, useRef, useState, type CSSProperties } from 'react'
-import logo from '../assets/img/logo-reloj-gato.svg?raw'
-import { box } from '../lib/layout'
-import { ui, type Idioma } from '../content'
-import { useIdioma } from '../lib/idioma'
-import { Link, paths, useRouter, type PageName } from '../lib/router'
+import logo from '../../assets/img/logo-reloj-gato.svg?raw'
+import { box } from '../layouts/layout'
+import { ui, type Idioma } from '../../content'
+import { useIdioma } from '../../lib/idioma'
+import { Link, paths, useRouter, type PageName } from '../../lib/router'
 import s from './Header.module.css'
 
 const tabs: PageName[] = ['inicio', 'sobre-mi', 'casos', 'contacto']

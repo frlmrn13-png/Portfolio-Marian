@@ -1,11 +1,11 @@
 import { forwardRef, useImperativeHandle, useRef, type CSSProperties } from 'react'
 import { animate, motion, useMotionValue, useReducedMotion, useTransform } from 'motion/react'
-import { ui, type CardItem } from '../content'
-import fotoCecotec from '../assets/img/polaroid-cecotec.webp'
-import fotoOhmycat from '../assets/img/polaroid-ohmycat.webp'
-import fotoSobreMi from '../assets/img/polaroid-sobre-mi.webp'
-import fotoMassolis from '../assets/img/polaroid-massolis.webp'
-import fotoPath6 from '../assets/img/polaroid-path6.webp'
+import { ui, type CardItem } from '../../content'
+import fotoCecotec from '../../assets/img/polaroid-cecotec.webp'
+import fotoOhmycat from '../../assets/img/polaroid-ohmycat.webp'
+import fotoSobreMi from '../../assets/img/polaroid-sobre-mi.webp'
+import fotoMassolis from '../../assets/img/polaroid-massolis.webp'
+import fotoPath6 from '../../assets/img/polaroid-path6.webp'
 
 /** Foto de cada tarjeta (los textos alternativos están en textos/es.ts y en.ts). */
 export const fotos: Partial<Record<CardItem['id'], string>> = {
@@ -15,7 +15,8 @@ export const fotos: Partial<Record<CardItem['id'], string>> = {
   path6: fotoPath6,
   'sobre-mi': fotoSobreMi,
 }
-import { Link } from '../lib/router'
+import { Link } from '../../lib/router'
+import { Icono } from '../atoms/Icono'
 import s from './Polaroid.module.css'
 
 export type PolaroidHandle = {
@@ -91,9 +92,7 @@ export const Polaroid = forwardRef<
             <p className={s.desc}>{item.descripcion}</p>
           </div>
           <span className={s.arrow} aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M5 12h13M13 6.5 18.5 12 13 17.5" />
-            </svg>
+            <Icono nombre="siguiente" />
           </span>
         </div>
       </Link>

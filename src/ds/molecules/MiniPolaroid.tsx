@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
-import { cards, type CardItem } from '../content'
-import { Link } from '../lib/router'
+import { cards, type CardItem } from '../../content'
+import { Link } from '../../lib/router'
 import { fotos } from './Polaroid'
 import s from './MiniPolaroid.module.css'
 

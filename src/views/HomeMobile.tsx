@@ -3,14 +3,15 @@ import nota from '../assets/decor/nota.webp'
 import romero from '../assets/archivo/romero.webp'
 import chai from '../assets/decor/chai.webp'
 import { cards, home, ui, type CardItem } from '../content'
-import { Annotation } from '../components/Annotation'
-import { BotonArriba } from '../components/BotonArriba'
-import { CatPaw } from '../components/CatPaw'
-import { Header } from '../components/Header'
-import { Polaroid, type PolaroidHandle } from '../components/Polaroid'
-import { SelloContacto } from '../components/SelloContacto'
-import { Threads, sagPath, type ThreadDef, type ThreadsHandle } from '../components/Threads'
+import { Annotation } from '../ds/atoms/Annotation'
+import { BotonArriba } from '../ds/layouts/BotonArriba'
+import { CatPaw } from '../ds/molecules/CatPaw'
+import { Header } from '../ds/organisms/Header'
+import { Polaroid, type PolaroidHandle } from '../ds/molecules/Polaroid'
+import { SelloContacto } from '../ds/molecules/SelloContacto'
+import { Threads, sagPath, type ThreadDef, type ThreadsHandle } from '../ds/organisms/Threads'
 import { exploreCards } from '../lib/explore'
+import { Boton } from '../ds/atoms/Boton'
 import s from './HomeMobile.module.css'
 
 /* En vertical las fotos bajan en zigzag; el hilo une la base de cada una con la chincheta de la siguiente */
@@ -99,9 +100,9 @@ export function HomeMobile() {
             <span>{home.titulo.linea1}</span> <em>{home.titulo.linea2}</em>
           </h1>
           <p className={s.texto}>{home.texto}</p>
-          <button type="button" className={s.boton} onClick={explore}>
+          <Boton className={s.boton} tamano="material" onClick={explore}>
             {home.boton}
-          </button>
+          </Boton>
           <Annotation lines={home.chivato} delay={0.5} className={s.chivato} />
         </section>
 

@@ -84,21 +84,13 @@
   font-size: clamp(15px, 4.2vw, 18px);
 }
 
+/* Material del botón granate: clase global «boton-granate» (átomo Boton, tamano="material") */
 .boton {
-  display: inline-flex;
-  align-items: center;
   gap: 10px;
   min-height: 50px;
   margin-top: 26px;
   padding: 0 24px;
-  color: var(--texto-claro);
-  text-decoration: none;
-  font-weight: 600;
   font-size: 16px;
-  border: 0;
-  cursor: pointer;
-  font-family: var(--sans);
-  background: url('../assets/textures/grain.svg'), linear-gradient(175deg, #7a2227, var(--granate-boton) 55%, #5b1418);
   box-shadow: var(--sombra-boton);
   transition: transform var(--dur-hover) var(--ease-out);
 }
@@ -109,11 +101,6 @@
 
 .boton svg {
   width: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 /* Frase editorial en la nota rasgada */

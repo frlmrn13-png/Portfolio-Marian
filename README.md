@@ -37,7 +37,9 @@ Se abre en http://localhost:5193. `npm run build` deja la versión publicable en
   ventanas casi cuadradas).
 - `src/views/About.tsx`, `Cases.tsx` y `Contact.tsx`: «Sobre mí», «Case studies»
   (un caso por URL: `/casos/cecotec`, `/casos/ohmycat`, `/casos/n4`) y «Contacto»
-  con la ficha de proyecto. Comparten la mesa de `src/components/PageShell.tsx`.
+  con la ficha de proyecto. Comparten la mesa de `src/ds/layouts/PageShell.tsx`.
+- `src/ds/`: el design system interno (tokens, materiales, átomos, moléculas,
+  organismos y layouts). Sus reglas y el inventario de piezas están en `DESIGN.md`.
 - Para que el formulario envíe, pon el correo en `contacto.email` (`src/content.ts`):
   abrirá el programa de correo con el mensaje redactado. Vacío, avisa de que aún
   no está conectado.

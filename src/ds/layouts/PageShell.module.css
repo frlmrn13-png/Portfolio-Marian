@@ -79,9 +79,9 @@
 .sheet {
   position: relative;
   background:
-    url('../assets/textures/fibres.svg'),
-    url('../assets/textures/grain.svg'),
-    linear-gradient(170deg, #faf6ef, #f1eadf);
+    url('../../assets/textures/fibres.svg'),
+    url('../../assets/textures/grain.svg'),
+    linear-gradient(170deg, var(--papel-impreso-1), #f1eadf);
   background-size: 900px 900px, 320px 320px, auto;
   box-shadow: var(--sombra-2);
 }
@@ -112,57 +112,6 @@
   color: var(--texto);
 }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 50px;
-  padding: 0 24px;
-  border: 0;
-  cursor: pointer;
-  color: var(--texto-claro);
-  text-decoration: none;
-  font-family: var(--sans);
-  font-weight: 600;
-  font-size: 16px;
-  background: url('../assets/textures/grain.svg'), linear-gradient(175deg, #7a2227, var(--granate-boton) 55%, #5b1418);
-  box-shadow: var(--sombra-boton);
-  transition:
-    transform var(--dur-hover) var(--ease-out),
-    box-shadow var(--dur-hover) var(--ease-out);
-  -webkit-tap-highlight-color: transparent;
-}
-
-.button svg {
-  transition: translate var(--dur-hover) var(--ease-out);
-}
-
-.button svg {
-  width: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .button:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--sombra-boton-alta);
-  }
-  /* la flecha se adelanta un poco: invita a seguir */
-  .button:hover svg {
-    translate: 3px 0;
-  }
-}
-
-.button:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: var(--sombra-boton-baja);
-  transition-duration: var(--dur-pulsar);
-}
-
 /* Anotación de archivo (Ibarra cursiva) */
 .note {
   margin: 0;
@@ -182,12 +131,6 @@
 .tape {
   composes: cinta from global;
   z-index: 3;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .button {
-    transition: none;
-  }
 }
 
 /* ——— Volver arriba: un recorte de papel con la flecha en azul marino ——— */

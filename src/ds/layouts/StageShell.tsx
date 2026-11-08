@@ -1,10 +1,10 @@
 import type { CSSProperties, ReactNode } from 'react'
-import romero from '../assets/archivo/romero.webp'
-import taza from '../assets/decor/taza.webp'
-import { pistas, ui } from '../content'
-import { box } from '../lib/layout'
-import { CatPaw } from './CatPaw'
-import { Decor, PointerDepth } from './Decor'
+import romero from '../../assets/archivo/romero.webp'
+import taza from '../../assets/decor/taza.webp'
+import { pistas, ui } from '../../content'
+import { box } from './layout'
+import { CatPaw } from '../molecules/CatPaw'
+import { Decor, PointerDepth } from '../organisms/Decor'
 import {
   SheetAfinidad,
   SheetAgenda,
@@ -15,7 +15,7 @@ import {
   SheetFlow,
   SheetJourney,
   SheetPersona,
-} from './DesignSheets'
+} from '../organisms/DesignSheets'
 
 /*
  * Las hojas de la mesa cambian con la página: bocetos de UX en la portada,
@@ -28,9 +28,9 @@ const juegos = {
   contacto: [SheetBrief, SheetAgenda, SheetDiamante],
 } as const
 export type Bocetos = keyof typeof juegos
-import { Header } from './Header'
-import { Threads, type ThreadDef } from './Threads'
-import h from '../views/Home.module.css'
+import { Header } from '../organisms/Header'
+import { Threads, type ThreadDef } from '../organisms/Threads'
+import h from '../../views/Home.module.css'
 
 /**
  * Mesa a pantalla completa de las secciones interiores (escritorio): la misma

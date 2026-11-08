@@ -1,9 +1,9 @@
 import { forwardRef, useState } from 'react'
-import es from '../assets/referencias/portillo-es.webp'
-import en from '../assets/referencias/portillo-en.webp'
-import { ui, type Idioma } from '../content'
-import { useIdioma } from '../lib/idioma'
-import { urlPublica } from '../lib/router'
+import es from '../../assets/referencias/portillo-es.webp'
+import en from '../../assets/referencias/portillo-en.webp'
+import { ui, type Idioma } from '../../content'
+import { useIdioma } from '../../lib/idioma'
+import { urlPublica } from '../../lib/router'
 import s from './Referencia.module.css'
 
 const cartas: Record<Idioma, { img: string; pdf: string }> = {

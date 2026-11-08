@@ -1,18 +1,20 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import lapiz from '../assets/decor/lapiz-marino.webp'
 import { cards, casos, expedientes, pages, ui } from '../content'
-import { PageShell } from '../components/PageShell'
-import { Fichas, Huellas, type Ficha } from '../components/Archivo'
-import { CatPaw } from '../components/CatPaw'
-import { Contrastes, Lamina, LaminaPestanas } from '../components/Diagramas'
+import { PageShell } from '../ds/layouts/PageShell'
+import { Fichas, Huellas, type Ficha } from '../ds/organisms/Archivo'
+import { CatPaw } from '../ds/molecules/CatPaw'
+import { Contrastes, Lamina, LaminaPestanas } from '../ds/organisms/Diagramas'
 import type { Diagrama } from '../textos/es'
-import { Garabatos } from '../components/Garabatos'
-import { MarcoMovil, MarcoPortatil } from '../components/Marcos'
-import { Threads, type Pt, type ThreadDef } from '../components/Threads'
+import { Garabatos } from '../ds/organisms/Garabatos'
+import { MarcoMovil, MarcoPortatil } from '../ds/atoms/Marcos'
+import { Threads, type Pt, type ThreadDef } from '../ds/organisms/Threads'
 import { expedienteHref, Link, paths, urlPublica } from '../lib/router'
 import { href } from './Cases'
-import a from '../components/Archivo.module.css'
-import p from '../components/PageShell.module.css'
+import { Boton } from '../ds/atoms/Boton'
+import { Icono } from '../ds/atoms/Icono'
+import a from '../ds/organisms/Archivo.module.css'
+import p from '../ds/layouts/PageShell.module.css'
 import s from './Expediente.module.css'
 
 /** Pantallas de cada caso (capturas del prototipo real), por clave. */
@@ -63,12 +65,9 @@ const HILOS: ThreadDef[] = PINES.slice(1).map((id, i) => ({
 
 function Probar({ url }: { url: string }) {
   return (
-    <a className={`${p.button} ${s.probar}`} href={url} target="_blank" rel="noopener noreferrer">
+    <Boton href={url} className={s.probar} icono="externo">
       {ui.expediente.probar}
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M7 17 17 7M9 7h8v8" />
-      </svg>
-    </a>
+    </Boton>
   )
 }
 
@@ -156,9 +155,7 @@ function MovilVivo({ url, titulo }: { url: string; titulo: string }) {
           <iframe src={url} title={titulo} loading="lazy" style={{ transform: `scale(${k})` }} />
         ) : (
           <button type="button" className={s.encender} onClick={() => setOn(true)}>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3v8M6.3 6.8a8 8 0 1 0 11.4 0" />
-            </svg>
+            <Icono nombre="encender" />
             {ui.expediente.encender}
           </button>
         )}
@@ -188,9 +185,7 @@ function PortatilVivo({ url, titulo }: { url: string; titulo: string }) {
             <iframe src={url} title={titulo} loading="lazy" style={{ transform: `scale(${k})` }} />
           ) : (
             <button type="button" className={s.encender} onClick={() => setOn(true)}>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3v8M6.3 6.8a8 8 0 1 0 11.4 0" />
-              </svg>
+              <Icono nombre="encender" />
               {ui.expediente.encender}
             </button>
           )}
@@ -283,9 +278,7 @@ function Carrusel({ className, children }: { className: string; children: ReactN
       </ol>
       <div className={s.carruselControles}>
         <button type="button" className={s.carruselFlecha} onClick={() => ir(actual - 1)} disabled={actual === 0} aria-label={t.pasoAnterior}>
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M19 12H6M11 6.5 5.5 12 11 17.5" />
-          </svg>
+          <Icono nombre="anterior" />
         </button>
         <span className={s.carruselPuntos}>
           {children.map((_, j) => (
@@ -300,9 +293,7 @@ function Carrusel({ className, children }: { className: string; children: ReactN
           ))}
         </span>
         <button type="button" className={s.carruselFlecha} onClick={() => ir(actual + 1)} disabled={actual === n - 1} aria-label={t.pasoSiguiente}>
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h13M13 6.5 18.5 12 13 17.5" />
-          </svg>
+          <Icono nombre="siguiente" />
         </button>
       </div>
     </div>
@@ -516,9 +507,7 @@ export function Expediente({ id }: { id: string }) {
 
         <nav className={s.migas} aria-label={t.migas}>
           <Link to={href(id)} className={s.volver}>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19 12H6M11 6.5 5.5 12 11 17.5" />
-            </svg>
+            <Icono nombre="anterior" />
             {t.volver}
           </Link>
         </nav>
@@ -742,9 +731,7 @@ export function Expediente({ id }: { id: string }) {
               </Nota>
               <a className={s.completa} href={urlPublica(e.prototipo)} target="_blank" rel="noopener noreferrer">
                 {t.completa}
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 17 17 7M9 7h8v8" />
-                </svg>
+                <Icono nombre="externo" />
               </a>
             </div>
           </div>
@@ -940,9 +927,7 @@ export function Expediente({ id }: { id: string }) {
               {ant.card.numero} · {ant.card.nombre}
             </span>
             <span className={s.siguienteDesc}>{ant.card.descripcion}</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M19 12H6M11 6.5 5.5 12 11 17.5" />
-            </svg>
+            <Icono nombre="anterior" />
           </Link>
           <Link to={paths.casos} className={s.volver}>
             {t.todos}
@@ -953,9 +938,7 @@ export function Expediente({ id }: { id: string }) {
               {sig.card.numero} · {sig.card.nombre}
             </span>
             <span className={s.siguienteDesc}>{sig.card.descripcion}</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M5 12h13M13 6.5 18.5 12 13 17.5" />
-            </svg>
+            <Icono nombre="siguiente" />
           </Link>
         </nav>
 

@@ -152,23 +152,15 @@
   font-size: max(13px, calc(var(--u) * 16));
 }
 
+/* Material del botón granate: clase global «boton-granate» (átomo Boton, tamano="material") */
 .boton {
   flex: none;
-  display: inline-flex;
-  align-items: center;
   gap: 0.6em;
   min-height: max(44px, calc(var(--u) * 50));
   margin-top: calc(var(--u) * 28);
   padding: 0 1.4em;
-  color: var(--texto-claro);
-  text-decoration: none;
-  font-family: var(--sans);
-  font-weight: 600;
   font-size: max(14px, calc(var(--u) * 16.5));
   letter-spacing: 0.01em;
-  border: 0;
-  cursor: pointer;
-  background: url('../assets/textures/grain.svg'), linear-gradient(175deg, #7a2227, var(--granate-boton) 55%, #5b1418);
   box-shadow:
     0 calc(var(--u) * 2) calc(var(--u) * 3) rgb(40 10 5 / 0.22),
     0 calc(var(--u) * 8) calc(var(--u) * 16) rgb(40 10 5 / 0.16);
@@ -178,11 +170,6 @@
 .boton svg {
   width: 1.1em;
   height: 1.1em;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
   transition: transform var(--dur-hover) var(--ease-out);
 }
 

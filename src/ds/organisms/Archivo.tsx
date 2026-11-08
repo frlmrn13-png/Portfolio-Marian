@@ -1,6 +1,6 @@
 import { useId, useRef, useState, type CSSProperties, type ReactNode } from 'react'
-import { sobreMi, ui } from '../content'
-import { VisorReferencia } from './Referencia'
+import { sobreMi, ui } from '../../content'
+import { VisorReferencia } from '../molecules/Referencia'
 import s from './Archivo.module.css'
 
 /*

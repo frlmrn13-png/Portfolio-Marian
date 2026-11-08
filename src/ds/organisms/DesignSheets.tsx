@@ -1,7 +1,7 @@
 import type { CSSProperties, ReactNode } from 'react'
-import { pistas, ui } from '../content'
-import { box } from '../lib/layout'
-import { Hint, type HintText } from './Hint'
+import { pistas, ui } from '../../content'
+import { box } from '../layouts/layout'
+import { Hint, type HintText } from '../molecules/Hint'
 import s from './DesignSheets.module.css'
 
 /*

@@ -25,7 +25,7 @@
   line-height: 1.22;
   color: var(--texto);
   background:
-    url('../assets/textures/grain.svg'),
+    url('../../assets/textures/grain.svg'),
     linear-gradient(176deg, #fcf9f4, var(--hoja-2));
   border: 1px solid rgb(120 95 70 / 0.16);
   box-shadow: var(--sombra-1);

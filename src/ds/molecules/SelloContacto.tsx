@@ -1,6 +1,6 @@
 import { useId, type CSSProperties } from 'react'
-import { ui } from '../content'
-import { Link, paths } from '../lib/router'
+import { ui } from '../../content'
+import { Link, paths } from '../../lib/router'
 import s from './SelloContacto.module.css'
 
 /**

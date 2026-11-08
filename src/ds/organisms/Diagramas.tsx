@@ -1,5 +1,5 @@
 import { useId, useState, type CSSProperties } from 'react'
-import type { Diagrama } from '../textos/es'
+import type { Diagrama } from '../../textos/es'
 import s from './Diagramas.module.css'
 
 /*

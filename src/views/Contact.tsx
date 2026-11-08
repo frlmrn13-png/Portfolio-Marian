@@ -1,8 +1,9 @@
 import { useId, useState, type CSSProperties, type FormEvent, type ReactNode } from 'react'
 import { contacto, pages, ui } from '../content'
-import { PageShell } from '../components/PageShell'
-import { Logo } from '../components/Header'
-import p from '../components/PageShell.module.css'
+import { PageShell } from '../ds/layouts/PageShell'
+import { Logo } from '../ds/organisms/Header'
+import { Boton } from '../ds/atoms/Boton'
+import p from '../ds/layouts/PageShell.module.css'
 import s from './Contact.module.css'
 
 type Campos = { nombre: string; email: string; idea: string }
@@ -157,12 +158,9 @@ export function ContactForm({
         value={trampa}
         onChange={e => setTrampa(e.target.value)}
       />
-      <button type="submit" className={`${p.button} ${s.enviar}`} disabled={estado === 'enviando'}>
+      <Boton type="submit" className={s.enviar} disabled={estado === 'enviando'} icono="externo">
         {estado === 'enviando' ? ui.form.enviando : contacto.boton}
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7 17 17 7M9 7h8v8" />
-        </svg>
-      </button>
+      </Boton>
 
       {/* oxlint-disable-next-line jsx-a11y/prefer-tag-over-role -- es un aviso, no el resultado de un cálculo */}
       <p className={s.estado} role="status">

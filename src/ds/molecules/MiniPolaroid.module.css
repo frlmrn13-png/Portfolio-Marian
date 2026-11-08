@@ -9,7 +9,7 @@
   text-decoration: none;
   color: var(--texto);
   background:
-    url('../assets/textures/grain.svg'),
+    url('../../assets/textures/grain.svg'),
     linear-gradient(170deg, var(--hoja-1), var(--polaroid) 60%, var(--hoja-2));
   box-shadow: var(--sombra-2);
   transition:

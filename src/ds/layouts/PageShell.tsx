@@ -1,10 +1,10 @@
 import { useState, type ReactNode } from 'react'
-import taza from '../assets/decor/taza.webp'
-import d from './Decor.module.css'
-import romero from '../assets/archivo/romero.webp'
-import { ui } from '../content'
+import taza from '../../assets/decor/taza.webp'
+import d from '../organisms/Decor.module.css'
+import romero from '../../assets/archivo/romero.webp'
+import { ui } from '../../content'
 import { BotonArriba } from './BotonArriba'
-import { Header } from './Header'
+import { Header } from '../organisms/Header'
 import s from './PageShell.module.css'
 
 /**

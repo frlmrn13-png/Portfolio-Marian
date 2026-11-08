@@ -1,9 +1,12 @@
 # Archivo Abierto · design system interno
 
 Reglas para que todo el portfolio de Marian se diseñe con el mismo criterio.
-Antes de añadir o cambiar una pieza, comprobar que cumple esto. Los valores
-viven como variables en `src/styles/base.css` y las piezas comunes como
-clases globales que los módulos usan con `composes: … from global`.
+Antes de añadir o cambiar una pieza, comprobar que cumple esto. Es un sistema
+**interno**: no se enseña en la web. Todo vive en `src/ds/` (ver «11. Código»):
+los valores como variables en `src/ds/tokens.css`, las piezas comunes como
+clases globales en `src/ds/materiales.css` (los módulos las usan con
+`composes: … from global`) y los componentes ordenados en átomos, moléculas,
+organismos y layouts.
 
 ## 1. La idea
 
@@ -167,8 +170,8 @@ o, si no se puede, `font-weight: var(--rotulo-peso)` y
   - **Copias con cinta o clip**: las láminas del Figma y las capturas.
 - **Diagramas propios, nunca capturas del Figma**: journey, arquitectura,
   service blueprint, benchmarking y contrastes se dibujan en la web
-  (`components/Diagramas.tsx`) sobre láminas impresas, con los datos del Figma.
-- **Marcos únicos**: todos los móviles y portátiles usan `components/Marcos.tsx`, con medidas fijas.
+  (`ds/organisms/Diagramas.tsx`) sobre láminas impresas, con los datos del Figma.
+- **Marcos únicos**: todos los móviles y portátiles usan `ds/atoms/Marcos.tsx`, con medidas fijas.
 - **Pantallas en mockups**: móviles y portátil dibujados con capturas del
   prototipo real; «Cómo funciona» paso a paso y «Pruébalo aquí» con el
   prototipo en vivo dentro de un móvil.
@@ -187,3 +190,55 @@ o, si no se puede, `font-weight: var(--rotulo-peso)` y
   escrito directamente en los componentes.
 - No se inventan proyectos, datos ni resultados. El teléfono y el CV de Marian no se publican en el portfolio, por petición suya.
 - No poner post-its o rótulos encima de objetos que ya se explican solos.
+
+## 11. Código: dónde vive cada pieza
+
+```
+src/ds/
+  tokens.css      Todos los valores: color, papel, rasgados, sombras, rótulos y movimiento
+  base.css        Reinicio, mesa de madera con la hoja cuadriculada (.papel) y .sr-only
+  materiales.css  Clases globales: hoja-rasgada, rotulo, cinta y boton-granate
+  atoms/          Piezas mínimas, sin estado de la página
+  molecules/      Objetos de archivo hechos de átomos
+  organisms/      Conjuntos grandes: cabecera, archivo, diagramas, hilo rojo, decoración
+  layouts/        La mesa de cada página y las medidas en unidades
+src/views/        Las páginas: solo colocan piezas del design system
+```
+
+| Nivel | Pieza | Archivo | Para qué |
+|---|---|---|---|
+| Token | Color, papel, sombra, movimiento | `tokens.css` | Ver secciones 4, 6 y 7. Colores nuevos de una pieza (luz y sombra del granate, la carpeta, las tiras Dymo, la polaroid, el papel impreso) también aquí |
+| Material | `hoja-rasgada`, `rotulo`, `cinta`, `boton-granate` | `materiales.css` | Papel suelto, rótulos, cinta adhesiva y el material del botón |
+| Átomo | `Boton` | `atoms/Boton.tsx` | La única llamada principal. `to` (enlace interno), `href` (pestaña nueva) o botón; `icono`; `tamano="material"` para los botones de la mesa, que ponen su tamaño en unidades |
+| Átomo | `Icono` | `atoms/Icono.tsx` | Iconos de línea: `siguiente`, `anterior`, `externo`, `encender` |
+| Átomo | `Annotation`, `Leader` | `atoms/Annotation.tsx` | Notas en Ibarra y la línea que las une a su objeto |
+| Átomo | `MarcoMovil`, `MarcoPortatil` | `atoms/Marcos.tsx` | Marcos únicos de los dispositivos |
+| Molécula | `Polaroid`, `MiniPolaroid` | `molecules/` | Fotos como copia en papel; atajo a «Sobre mí» |
+| Molécula | `SelloContacto` | `molecules/` | Sello «Ponte en contacto» |
+| Molécula | `Hint` | `molecules/` | Frase al pasar el ratón por un objeto |
+| Molécula | `VisorReferencia` | `molecules/Referencia.tsx` | Carta de referencia en un diálogo |
+| Molécula | `CatPaw` | `molecules/` | La pata de gato con su frase |
+| Organismo | `Header`, `Logo` | `organisms/Header.tsx` | Cabecera con el índice desplegable |
+| Organismo | `Fichas`, `PostIt`, `FicheroExperiencia`, `CarpetaHerramientas`, `Diplomas`, `Datos`, `Huellas` | `organisms/Archivo.tsx` | Objetos de archivo (cajón, carpeta, post-it…) |
+| Organismo | `Lamina`, `LaminaPestanas`, `Contrastes` | `organisms/Diagramas.tsx` | Diagramas propios sobre láminas |
+| Organismo | Hojas de bocetos (`Sheet…`) | `organisms/DesignSheets.tsx` | Hojas impresas de los bordes de la mesa |
+| Organismo | `Garabatos` | `organisms/Garabatos.tsx` | Anotaciones a mano sobre las pantallas |
+| Organismo | `Threads` | `organisms/Threads.tsx` | El hilo rojo y sus chinchetas |
+| Organismo | `Decor`, `PointerDepth` | `organisms/Decor.tsx` | Objetos de los bordes que se mueven con el ratón |
+| Layout | `PageShell`, `BotonArriba` | `layouts/PageShell.tsx`, `layouts/BotonArriba.tsx` | Mesa de las páginas en columna (móvil, tableta, expedientes) |
+| Layout | `StageShell` | `layouts/StageShell.tsx` | Mesa de escritorio con bocetos, hilo y chinchetas |
+| Layout | `box`, `u`, `useViewport` | `layouts/layout.ts` | Coordenadas en unidades de la imagen (1536 × 1024) y cuándo hay escritorio |
+
+**Reglas del código**
+
+- Antes de escribir una pieza nueva, buscar si ya existe aquí. Si se repite en
+  dos páginas, se sube a `src/ds/` al nivel que le toque.
+- Botones granates siempre con `Boton`; iconos de línea siempre con `Icono`.
+  Nada de copiar el degradado ni los trazos SVG.
+- En los CSS no hay valores sueltos: si hace falta un color, una sombra o un
+  tiempo nuevo, primero se crea el token en `tokens.css`.
+- Los estilos de un átomo se importan antes que los de la página, para que
+  la página pueda ajustarlos (márgenes, giro) sin `!important`.
+- Las páginas importan cada pieza desde su archivo (no hay un índice común):
+  así cada página descarga solo lo que usa.
+

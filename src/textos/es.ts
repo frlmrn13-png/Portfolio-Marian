@@ -1,4 +1,4 @@
-import type { HintText } from '../components/Hint'
+import type { HintText } from '../ds/molecules/Hint'
 import { paths } from '../lib/router'
 
 /*

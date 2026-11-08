@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
-import pata from '../assets/decor/pata-gato.webp'
-import { pistas } from '../content'
+import pata from '../../assets/decor/pata-gato.webp'
+import { pistas } from '../../content'
 import { Hint } from './Hint'
 import s from './CatPaw.module.css'
 

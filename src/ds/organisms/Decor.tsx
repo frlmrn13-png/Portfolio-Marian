@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState, type CSSProperties, type ReactNode } from 'react'
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform, type MotionValue } from 'motion/react'
-import { box } from '../lib/layout'
-import { Hint, type HintText } from './Hint'
+import { box } from '../layouts/layout'
+import { Hint, type HintText } from '../molecules/Hint'
 import s from './Decor.module.css'
 
 type Pointer = {

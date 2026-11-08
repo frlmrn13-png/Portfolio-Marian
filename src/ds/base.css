@@ -1,0 +1,100 @@
+/* Archivo Abierto · base: reinicio, mesa con la hoja cuadriculada y utilidades.
+   Los valores están en tokens.css y las piezas comunes en materiales.css */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Las imágenes no se arrastran ni se seleccionan */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--papel);
+  color: var(--texto);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Mesa de trabajo de madera con una gran hoja cuadriculada encima. Los
+   textos van siempre sobre la hoja (contraste); la madera asoma por los
+   bordes, bajo los objetos que se quedaron en la mesa. */
+.papel {
+  --celda: calc(var(--u) * 38.7);
+  --linea: max(1px, calc(var(--u) * 1.15));
+  --margen-x: clamp(10px, 3.4vw, 72px);
+  --margen-y: clamp(8px, 1.8vh, 22px);
+  position: relative;
+  background-color: var(--mesa);
+  background-image: url('../assets/textures/mesa.webp');
+  /* textura continua: se repite sin costuras en las páginas largas */
+  background-size: 1500px auto;
+  background-position: center top;
+  background-repeat: repeat;
+}
+
+.papel::before {
+  content: '';
+  position: absolute;
+  inset: var(--margen-y) var(--margen-x) calc(var(--margen-y) * 1.4);
+  background-color: var(--papel);
+  background-image:
+    url('../assets/textures/fibres.svg'),
+    url('../assets/textures/grain.svg'),
+    linear-gradient(to right, var(--cuadricula) var(--linea), transparent var(--linea)),
+    linear-gradient(to bottom, var(--cuadricula) var(--linea), transparent var(--linea));
+  background-size:
+    900px 900px,
+    320px 320px,
+    var(--celda) var(--celda),
+    var(--celda) var(--celda);
+  background-position:
+    0 0,
+    0 0,
+    calc(50% + var(--u) * 27.5) calc(var(--u) * 30.7),
+    calc(50% + var(--u) * 27.5) calc(var(--u) * 30.7);
+  box-shadow:
+    0 1px 2px rgb(30 15 5 / 0.35),
+    0 10px 30px rgb(30 15 5 / 0.35);
+  rotate: -0.25deg;
+}
+
+/* Viñeteado suave de los bordes */
+.papel::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 75% at 50% 48%, transparent 60%, rgb(40 20 8 / 0.22) 100%);
+  z-index: 1;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--granate);
+  outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

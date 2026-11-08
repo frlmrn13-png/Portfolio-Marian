@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react'
 import { cards, casos, expedientes, pages, ui } from '../content'
-import { PageShell } from '../components/PageShell'
+import { PageShell } from '../ds/layouts/PageShell'
 import { expedienteHref, Link, matchCase, paths, useRouter } from '../lib/router'
-import p from '../components/PageShell.module.css'
+import { Boton } from '../ds/atoms/Boton'
+import { Icono } from '../ds/atoms/Icono'
+import p from '../ds/layouts/PageShell.module.css'
 import { Clip } from './CasesStage'
-import { fotos } from '../components/Polaroid'
+import { fotos } from '../ds/molecules/Polaroid'
 import s from './Cases.module.css'
 
 export const href = (id: string) => `${paths.casos}/${id}`
@@ -128,12 +130,9 @@ export function Cases() {
                   ))}
                 </ul>
                 {caso.id in expedientes ? (
-                  <Link to={expedienteHref(caso.id)} className={s.abrir}>
+                  <Boton to={expedienteHref(caso.id)} className={s.abrir} tamano="material" icono="siguiente">
                     {ui.expediente.abrir}
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                      <path d="M5 12h13M13 6.5 18.5 12 13 17.5" />
-                    </svg>
-                  </Link>
+                  </Boton>
                 ) : (
                   <p className={s.pending}>{ui.casos.pendiente}</p>
                 )}
@@ -170,9 +169,7 @@ export function Cases() {
               className={s.arrow}
               aria-label={`${ui.casos.anterior}: ${cards[prev.id].nombre}`}
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M19 12H6M11 6.5 5.5 12 11 17.5" />
-              </svg>
+              <Icono nombre="anterior" />
             </Link>
             <span className={s.count}>
               {card.numero} / {String(casos.length).padStart(2, '0')}
@@ -183,9 +180,7 @@ export function Cases() {
               className={s.arrow}
               aria-label={`${ui.casos.siguiente}: ${cards[next.id].nombre}`}
             >
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 12h13M13 6.5 18.5 12 13 17.5" />
-              </svg>
+              <Icono nombre="siguiente" />
             </Link>
           </nav>
         </div>

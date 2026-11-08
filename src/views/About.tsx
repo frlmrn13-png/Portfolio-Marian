@@ -1,9 +1,10 @@
 import retrato from '../assets/img/retrato-bn.webp'
 import { pages, sobreMi, ui } from '../content'
-import { CarpetaHerramientas, Diplomas, FicheroExperiencia, PostIt } from '../components/Archivo'
-import { PageShell } from '../components/PageShell'
-import { Link, paths } from '../lib/router'
-import p from '../components/PageShell.module.css'
+import { CarpetaHerramientas, Diplomas, FicheroExperiencia, PostIt } from '../ds/organisms/Archivo'
+import { PageShell } from '../ds/layouts/PageShell'
+import { paths } from '../lib/router'
+import { Boton } from '../ds/atoms/Boton'
+import p from '../ds/layouts/PageShell.module.css'
 import s from './About.module.css'
 
 /**
@@ -52,12 +53,9 @@ export function About() {
           <Diplomas />
         </section>
 
-        <Link to={paths.casos} className={`${p.button} ${s.cta}`}>
+        <Boton to={paths.casos} className={s.cta} icono="siguiente">
           {sobreMi.boton}
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h13M13 6.5 18.5 12 13 17.5" />
-          </svg>
-        </Link>
+        </Boton>
       </div>
     </PageShell>
   )

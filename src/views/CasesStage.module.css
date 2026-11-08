@@ -171,7 +171,7 @@
   border-radius: calc(var(--u) * 6);
   background:
     url('../assets/textures/grain.svg'),
-    linear-gradient(160deg, #2c3e63, var(--marino) 55%, #182540);
+    linear-gradient(160deg, var(--carpeta-luz), var(--marino) 55%, var(--carpeta-sombra));
   box-shadow:
     0 calc(var(--u) * 3) calc(var(--u) * 4) rgb(20 25 40 / 0.3),
     0 calc(var(--u) * 18) calc(var(--u) * 36) rgb(20 25 40 / 0.22);
@@ -196,18 +196,18 @@
   font-size: max(11px, calc(var(--u) * 14));
   letter-spacing: 0.06em;
   color: var(--marino-claro);
-  background: url('../assets/textures/grain.svg'), linear-gradient(180deg, #3a4f78, #2a3b5f);
+  background: url('../assets/textures/grain.svg'), linear-gradient(180deg, var(--pestana-marino-1), var(--pestana-marino-2));
   clip-path: polygon(0 100%, 0 14%, 4% 0, 88% 0, 100% 100%);
   transition: transform var(--dur-hover) var(--ease-out);
 }
 
 .tab .num {
-  color: #b9c6dd;
+  color: var(--pestana-marino-numero);
 }
 
 .tabActive {
   color: var(--granate);
-  background: url('../assets/textures/grain.svg'), linear-gradient(180deg, #faf6ef, #f9f5ee);
+  background: url('../assets/textures/grain.svg'), linear-gradient(180deg, var(--papel-impreso-1), var(--papel-impreso-2));
 }
 
 .tabActive .num {
@@ -229,7 +229,7 @@
   background:
     url('../assets/textures/fibres.svg'),
     url('../assets/textures/grain.svg'),
-    linear-gradient(176deg, #f9f5ee, #efe8dc);
+    linear-gradient(176deg, var(--papel-impreso-2), var(--papel-impreso-3));
   background-size: 900px 900px, 320px 320px, auto;
   box-shadow:
     0 calc(var(--u) * 2) calc(var(--u) * 3) rgb(60 40 20 / 0.16),
@@ -312,7 +312,7 @@
     0 1px 0 rgb(255 255 255 / 0.16);
   background:
     url('../assets/textures/grain.svg'),
-    linear-gradient(180deg, #34497a, var(--marino) 55%, #19253f);
+    linear-gradient(180deg, var(--dymo-luz), var(--marino) 55%, var(--dymo-sombra));
   box-shadow:
     0 1px 1px rgb(20 25 40 / 0.35),
     0 3px 5px rgb(20 25 40 / 0.18);
@@ -345,19 +345,14 @@
 }
 
 /* Abrir el expediente completo: botón granate, como el resto de llamadas */
+/* Material del botón granate: clase global «boton-granate» (átomo Boton, tamano="material") */
 .abrir {
-  display: inline-flex;
-  align-items: center;
   gap: 0.6em;
   min-height: 44px;
   margin-top: calc(var(--u) * 28);
   padding: 0 1.3em;
-  color: var(--texto-claro);
-  text-decoration: none;
-  font-weight: 600;
   font-size: max(13px, calc(var(--u) * 15));
   white-space: nowrap;
-  background: url('../assets/textures/grain.svg'), linear-gradient(175deg, #7a2227, var(--granate-boton) 55%, #5b1418);
   box-shadow: var(--sombra-boton);
   rotate: -1.5deg;
   transition: transform var(--dur-hover) var(--ease-out);
@@ -365,11 +360,6 @@
 
 .abrir svg {
   width: 1.1em;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -390,7 +380,7 @@
   animation: cae 640ms 220ms var(--ease-asiento) both;
   transition: translate var(--dur-media) var(--ease-out);
   padding: calc(var(--u) * 12) calc(var(--u) * 12) calc(var(--u) * 36);
-  background: url('../assets/textures/grain.svg'), linear-gradient(170deg, #fbfaf7, var(--polaroid) 60%, #f0ede7);
+  background: url('../assets/textures/grain.svg'), linear-gradient(170deg, var(--polaroid-luz), var(--polaroid) 60%, var(--polaroid-sombra));
   box-shadow:
     0 calc(var(--u) * 2) calc(var(--u) * 3) rgb(40 25 10 / 0.16),
     0 calc(var(--u) * 10) calc(var(--u) * 20) rgb(40 25 10 / 0.16);
@@ -401,7 +391,7 @@
   aspect-ratio: 4 / 3;
   background:
     url('../assets/textures/grain.svg'),
-    radial-gradient(ellipse 90% 80% at 40% 35%, #d8cfc1, #cbc0af 75%, #c2b6a4);
+    radial-gradient(ellipse 90% 80% at 40% 35%, var(--foto-vacia-1), var(--foto-vacia-2) 75%, var(--foto-vacia-3));
   box-shadow: inset 0 0 calc(var(--u) * 12) rgb(60 40 20 / 0.18);
 }
 

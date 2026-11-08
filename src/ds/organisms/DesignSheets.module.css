@@ -8,8 +8,8 @@
   width: 100%;
   height: 100%;
   background:
-    url('../assets/textures/fibres.svg'),
-    url('../assets/textures/grain.svg'),
+    url('../../assets/textures/fibres.svg'),
+    url('../../assets/textures/grain.svg'),
     linear-gradient(170deg, #f8f4ec, #efe9de);
   background-size: 900px 900px, 320px 320px, auto;
   clip-path: polygon(0.6% 1.2%, 18% 0.4%, 34% 1.4%, 52% 0.2%, 71% 1%, 88% 0.3%, 99.4% 1.1%, 100% 34%, 99.3% 62%,
